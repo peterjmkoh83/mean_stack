@@ -1,0 +1,46 @@
+users = [
+   {
+     fname: "Kermit",
+     lname: "the Frog",
+     languages: ["Python", "JavaScript", "C#", "HTML", "CSS", "SQL"],
+     interests: {
+       music: ["guitar", "flute"],
+       dance: ["tap", "salsa"],
+       television: ["Black Mirror", "Stranger Things"]
+     }
+   },
+   {
+     fname: "Winnie",
+     lname: "the Pooh",
+     languages: ["Python", "Swift", "Java"],
+     interests: {
+       food: ["honey", "honeycomb"],
+       flowers: ["honeysuckle"],
+       mysteries: ["Heffalumps"]
+     }
+   },
+   {
+     fname: "Arthur",
+     lname: "Dent",
+     languages: ["JavaScript", "HTML", "Go"],
+     interests: {
+       space: ["stars", "planets", "improbability"],
+       home: ["tea", "yellow bulldozers"]
+     }
+   }
+] 
+ 
+
+function usersLanguages() {
+   var newStr = "";
+   for (var i=0; i < users.length; i++) {
+      newStr += " " + users[i].fname + " " + users[i].lname + " knows"
+      temp = users[i].languages[users[i].languages.length-1];
+      users[i].languages[users[i].languages.length-1] = "and " + temp + ".";
+      for (var k = 0; k < users[i].languages.length; k++) {
+         newStr +=" " + users[i].languages[k];
+      } 
+   }
+   console.log(newStr)
+}
+usersLanguages(users)

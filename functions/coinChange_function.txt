@@ -1,0 +1,26 @@
+function coinChange(amt) {
+   change = {
+      "dollar" : 0,
+      "quarter" : 0,
+      "dime" : 0,
+      "nickel" : 0,
+      "penny" : 0,
+   }
+   
+   change.dollar = Math.floor(amt/100);
+      amt = (amt % 100);
+   
+   change.quarter = Math.floor(amt/25);
+      amt = (amt % 25);
+
+   change.dime = Math.floor(amt/10);
+      amt = (amt % 10);
+   
+   change.nickel = Math.floor(amt/5);
+      amt = (amt % 5);
+
+   change.penny = amt;   
+   
+   return change;
+}
+console.log(coinChange(199));

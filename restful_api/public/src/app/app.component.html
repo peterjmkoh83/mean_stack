@@ -1,0 +1,41 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="root">
+  <div style="text-align:center">
+    <h1>{{ main_title }}</h1> 
+    <app-task *ngIf="one_task" [taskToShow]="one_task"></app-task> 
+    <button (click)="getTasksFromService()">Get All Tasks</button>
+  <hr>
+
+  <h2>All tasks</h2>
+  <p *ngFor="let task of tasks">{{ task.title }} | <button (click)="getTaskFromService(task._id)">SHOW</button> | <button (click)="onDelete(task._id)">DELETE</button> | <button (click)="editForm(task)">EDIT</button>
+  </p>
+  <hr>
+  
+  <h2>Show Task Detail</h2>
+  <p>{{ one_task?.title }}</p>
+  <p>{{ one_task?.description }}</p>
+</div>  
+ 
+<hr>
+<h2>New Task</h2>
+<form (submit)="onSubmit()">
+  <p> {{ newTask | json}} </p>
+  <p>Title: <input type="text" name="newTask.title" [(ngModel)]="newTask.title" /></p>
+  <p>Description: <input type="text" name="newTask.description" [(ngModel)]="newTask.description" /></p>
+  <input type="submit" value="Create Task">
+</form>
+
+<hr>
+<div *ngIf="editTog">
+<h2>Edit a Task</h2>
+  <form (submit)="onEdit()">
+    <p>Title <input type="text" name="editTask.title" [(ngModel)]="editTask.title" ></p>
+    <p>Description <input type="text" name="editTask.description" [(ngModel)]="editTask.description"></p>
+    <button>Submit</button>
+  </form>
+</div>
+
+<app-task *ngIf="one_task" [taskToShow]="one_task"></app-task>  
+
+
+

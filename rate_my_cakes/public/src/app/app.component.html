@@ -1,0 +1,43 @@
+<div class="container">
+  <h1> {{ title }} </h1>
+  <hr>
+  <h5>Submit a cake to be rated</h5>
+  <form (submit)="cakeSubmit()">
+    <p> {{ newCake | json }}</p>
+    <p>Baker Name:</p>
+    <p><input type="text" name="newCake.baker" [(ngModel)]="newCake.baker"  /></p>
+    
+    <p>Image url:</p>
+    <p><input type="text" name="newCake.image" [(ngModel)]="newCake.image"  /></p>
+    
+    <button>Submit</button>
+  </form>
+  <hr>
+  <div *ngFor="let cake of cakes">
+    <img [src]="cake.image" alt="" style= "width:150px; height:150px; padding: 5px">  
+    <form (submit)="ratingSubmit(cake._id)">
+      <p> {{ newRating | json }} </p>
+      <select name="newRating.rating" [(ngModel)]="newRating.rating">
+        <option value=5>5 stars</option>
+        <option value=4>4 stars</option>
+        <option value=3>3 stars</option>
+        <option value=2>2 stars</option>
+        <option value=1>1 stars</option>
+        <option value=0>0 stars</option>
+
+        
+      </select>
+      <p><textarea name="newRating.comment" [(ngModel)]="newRating.comment" row="10" cols="25">Type your comment here</textarea></p>
+      <button>Rate!</button>
+    </form>
+  </div>
+    
+    
+  <app-cake *ngIf="selectedCake" [cakeToShow]="selectedCake"></app-cake> 
+
+
+
+</div>
+
+
+

@@ -1,0 +1,13 @@
+<div class="container" style="border:3px solid black;">
+   <h1 style="text-align: center; ">{{ weather_data.name }}</h1>
+   <div style="width: 350px; height: 250px; display:inline-block;">
+      <p>Humidity: {{ weather_data.main.humidity }}</p>
+      <p>Temperature (Average): {{ weather_data.main.temp }}</p>
+      <p>Temperature (High): {{ weather_data?.main.temp_max }}</p>
+      <p>Temperature (Low): {{ weather_data?.main.temp_min }}</p>
+      <p>Status: {{ weather_data.weather[0].main }}</p>
+   </div>
+   <div style="margin-left: 50px; width: 350px; height: 250px; display:inline-block; vertical-align: top;">
+      <img style="width: 200px; height: 200px" src="https://tse1.mm.bing.net/th?id=OIP.lMBmMWLUrHU1ntjsO7i5NwHaE7&pid=Api&P=0&w=272&h=182">
+   </div>
+</div>
