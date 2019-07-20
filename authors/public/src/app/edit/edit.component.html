@@ -1,0 +1,11 @@
+<div class="container">
+      <a href="#" [routerLink]="['']">Home</a>
+      <p>Edit this author:</p>
+      <form (submit)="editSubmit()">
+         <p>First Name: <input type="text" name="newAuthor.first_name" [(ngModel)]="newAuthor['first_name']"></p>
+         <p>Last Name: <input type="text" name="newAuthor.last_name" [(ngModel)]="newAuthor['last_name']"></p>
+         <div>
+            <button type="submit" class="btn btn-danger" [routerLink]="['']">Cancel</button> | <input type="submit" class="btn btn-success" value="Submit">
+         </div>
+      </form>  
+   </div>
