@@ -1,0 +1,25 @@
+<h2>Create a New Product</h2>
+<form (submit)="onSubmit()">
+   <div class="form-group row">
+      <label for="" class="col-sm-2 col-form-label">Title</label>
+         <p class="small text-danger" *ngIf="err.title.message">{{ err.title.message }}</p>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" name="newProd.title" [(ngModel)]="newProd.title">
+     </div>
+   </div>
+   <div class="form-group row">
+      <label for="" class="col-sm-2 col-form-label">Price</label>
+         <p class="small text-danger" *ngIf="err.price.message">{{ err.price.message }}</p>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="newProd.price" [(ngModel)]="newProd.price">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="" class="col-sm-2 col-form-label">Image</label>
+         <p class="small text-danger" *ngIf="err.img.message">{{ err.img.message }}</p>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="newProd.img" [(ngModel)]="newProd.img">
+      </div>
+    </div>
+   <button type="submit">Submit</button>
+ </form>
