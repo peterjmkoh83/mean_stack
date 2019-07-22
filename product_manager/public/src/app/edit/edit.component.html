@@ -1,1 +1,27 @@
-<p>edit works!</p>
+<h2>Edit a New Product</h2>
+<form (submit)="onSubmit()">
+   <p>{{ editProd | json }} </p>
+   <div class="form-group row">
+      <label for="" class="col-sm-2 col-form-label">Title</label>
+         <p class="small text-danger" *ngIf="err.title.message">{{ err.title.message }}</p>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" name="editProd.title" [(ngModel)]="editProd.title" value="{{ editProd.title }}">
+     </div>
+   </div>
+   <div class="form-group row">
+      <label for="" class="col-sm-2 col-form-label">Price</label>
+         <p class="small text-danger" *ngIf="err.price.message">{{ err.price.message }}</p>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" name="editProd.price" [(ngModel)]="editProd.price" value="{{ editProd.price }}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="" class="col-sm-2 col-form-label">Image</label>
+         <p class="small text-danger" *ngIf="err.img.message">{{ err.img.message }}</p>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="editProd.img" [(ngModel)]="editProd.img" value="{{editProd.title}}">
+      </div>
+    </div>
+   <button type="submit">Submit</button>
+ </form>
+

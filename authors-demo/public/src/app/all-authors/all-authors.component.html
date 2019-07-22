@@ -1,0 +1,24 @@
+<a [routerLink]="['/authors/new']">Create New Author</a>
+
+<h1>We have quotes by:</h1>
+
+<table>
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Actions</th>
+      </tr>
+   </thead>
+   <tbody>    
+      <tr *ngFor="let author of allAuthors">
+         <td>{{ author.name }}</td>
+         <td>{{ author.age }}</td>
+         <td>
+            <button [routerLink]="['/authors/edit', author._id]">Edit</button> |
+            <button>Delete</button>
+         </td>
+      </tr>
+   </tbody>
+</table>
+

@@ -40,7 +40,7 @@ module.exports = {
    },
 
    update: (req, res) => {
-      Product.findByIdAndUpdate({_id: req.params.id}, req.body, {runValidators: true, context: 'query'}, (err, productsinDB) => {
+      Product.findByIdAndUpdate({_id: req.params.id}, req.body, {runValidators: true}, (err, productsinDB) => {
          if(err) {
             console.log(err);
             res.json({message: "Error", error: err});
