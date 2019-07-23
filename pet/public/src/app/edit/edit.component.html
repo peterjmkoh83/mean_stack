@@ -1,0 +1,25 @@
+<div class="container">
+   <h4>Edit this pet</h4>
+   <hr>
+   <form (submit)="onSubmit()">
+      <p> {{ pets | json }}  </p>
+      <div class="form-group">
+         <label>Pet name:</label>
+         <input type="text" class="form-control" value="{{ pets.name }}" name="pets.name" [(ngModel)]="pets.name">
+      </div>
+      <div class="form-group">
+         <label>Pet type:</label>
+         <input type="text" class="form-control" value="{{ pets.type }}" name="pets.type" [(ngModel)]="pets.type">
+      </div>
+      <div class="form-group">
+         <label>Description:</label>
+         <input type="text" class="form-control" value="{{ pets.desc }}" name="pets.desc" [(ngModel)]="pets.desc"> 
+      </div>
+      <div class="form-group">
+         <label>Skills (optional):</label>
+         <input type="text" class="form-control" value="{{ pets.skill }}" name="pets.skill" [(ngModel)]="pets.skill">
+      </div>
+      <button type="submit" class="btn btn-primary">Edit Pet</button>
+      <!-- <button class="btn btn-primary">Cancel</button> -->
+   </form>
+</div>   
