@@ -1,0 +1,35 @@
+<div class="container">
+   <hr>
+   <h2>Add a review for</h2>
+   
+   <form (submit)="postReview()">
+      <p>{{ newReview | json }}</p>
+      <!-- <div class="form-group">
+         <label>Movie Title </label>
+         <input type="text" class="form-control" name="newMovie.title" [(ngModel)]="newMovie.title">
+      </div> -->
+      <div class="form-group">
+         <label>Your name </label>
+         <input type="text" class="form-control" name="newReview.name" [(ngModel)]="newReview.name">
+      </div>
+        
+      <div class="form-group">
+         <label>Stars </label>
+         <select class="form-control" name="newReview.star" [(ngModel)]="newReview.star">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+            <option value="0">0</option>
+          </select>
+      </div>
+      <div class="form-group">
+         <label>Your review </label>
+         <textarea class="form-control" name="newReview.comment" [(ngModel)]="newReview.comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary" [routerLink]="['']">Cancel</button>
+   </form>
+</div>   
+         

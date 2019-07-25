@@ -11,7 +11,7 @@ module.exports = {
          else {
             res.json({message: "Success", pets: petsinDB});
          }
-      });
+      }).sort({type:1})
    },
    
    getOne: (req, res) => {

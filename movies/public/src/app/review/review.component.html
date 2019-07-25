@@ -1,0 +1,24 @@
+<div class ="container">
+   <div><a [routerLink]="['']">Home</a></div>
+   <br>
+   <button (click)="onDelete(movies._id)">DELETE</button>
+   <hr>
+   <h2>Reviews for {{ movies.title }}</h2>
+   
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th scope="col">Reviewer</th>
+            <th scope="col">Stars</th>
+            <th scope="col">Reviews</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let review of movies.review">
+            <th>{{ review.name }}</th>
+            <th>{{ review.star }}</th>
+            <th>{{ review.comment }}</th>
+         </tr>  
+      </tbody>
+   </table>
+</div>
