@@ -1,0 +1,28 @@
+<div class="container">
+   <h4>Add new characters in your list</h4>
+   <hr>
+   <form (submit)="onSubmit()">
+      <div class="form-group">
+         <label>Champion name:</label>
+         <p class="small text-danger">{{ err?.name.message }}</p>
+         <input type="text" class="form-control" name="newLol.name" [(ngModel)]="newLol.name">
+      </div>
+      <div class="form-group">
+         <label>Champion type:</label>
+         <p class="small text-danger">{{ err?.type.message }}</p>
+         <input type="text" class="form-control" name="newLol.type" [(ngModel)]="newLol.type">
+      </div>
+      <div class="form-group">
+         <label>Position:</label>
+         <p class="small text-danger">{{ err?.position.message }}</p>
+         <input type="text" class="form-control" name="newLol.position" [(ngModel)]="newLol.position">
+      </div>
+      <div class="form-group">
+         <label>Skills:</label>
+         <input type="text" class="form-control" name="newLol.skill" [(ngModel)]="newLol.skill">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Character</button>
+      <button class="btn btn-primary" [routerLink]="['']">Cancel</button>
+   </form>
+</div>   
+

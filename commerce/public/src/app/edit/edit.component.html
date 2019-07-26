@@ -1,0 +1,27 @@
+<div class="container">
+   
+   <h4>Update PRoduct</h4>
+   <hr>
+   <form (submit)="onUpdate()">
+      
+      <div class="form-group">
+         <label>Name</label>
+         <p class="small text-danger">{{ err?.name.message }}</p>
+         <input type="text" class="form-control" value="{{ prods.name }}" name="prods.name" [(ngModel)]="prods.name">
+      </div>
+      <div class="form-group">
+         <label>Quantity</label>
+         <p class="small text-danger">{{ err?.qty.message }}</p>
+         <input type="text" class="form-control" value="{{ prods.qty }}" name="prods.qty" [(ngModel)]="prods.qty">
+      </div>
+      <div class="form-group">
+         <label>Price</label>
+         <p class="small text-danger">{{ err?.price.message }}</p>
+         <input type="text" class="form-control" value="{{ prods.price }}" name="prods.price" [(ngModel)]="prods.price"> 
+      </div>
+     
+      <button type="submit" class="btn btn-success">Update</button>
+      <button class="btn btn-secondary" [routerLink]="['']">Cancel</button>
+   </form>
+</div>   
+

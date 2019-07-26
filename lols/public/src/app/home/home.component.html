@@ -1,0 +1,27 @@
+<div class ="container">
+   <hr>
+   <h4>These are characters looking for a user to play!</h4>
+   <a [routerLink]="['/lols/new']">Add a character to your list</a>
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Position</th>
+            <th scope="col">Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let oneLegend of arrayOFLegends">
+            <th>{{ oneLegend.name }}</th>
+            <td>{{ oneLegend.type }}</td>
+            <td>{{ oneLegend.position }}</td>
+            
+            <td><button>Details</button> | <button>Edit</button> | <button (click)="onDelete(oneLegend._id)">Delete</button></td>
+         </tr>  
+      </tbody>
+   </table>
+</div>
+
+<!-- [routerLink]="['/lols', lols._id]" -->
+<!-- [routerLink]="['/lols/edit', pet._id]" -->

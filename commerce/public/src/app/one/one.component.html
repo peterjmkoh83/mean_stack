@@ -1,0 +1,14 @@
+<div class="container">
+   <div class="box">
+      <h4>Product Details</h4>
+      <hr>
+      <br>
+      <h5>Name: {{ prods.name }}</h5>
+      <h5>Quantity: {{ prods.qty }}</h5>
+      <h5>Price: ${{ prods.price }}</h5>
+      <br>
+      <button class="btn btn-secondary" [routerLink]="['']">Back</button>
+      <button class="btn btn-danger" (click)="onDelete(prods._id)">DELETE</button>
+   </div>
+
+</div>

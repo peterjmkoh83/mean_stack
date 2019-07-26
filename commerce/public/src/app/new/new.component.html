@@ -1,0 +1,26 @@
+<div class="container">
+   
+   <h4>New Product</h4>
+   <hr>
+   <form (submit)="onSubmit()">
+      <div class="form-group">
+         <label>Name:</label>
+         <p class="small text-danger">{{ err?.name.message }}</p>
+         <input type="text" class="form-control" name="newProd.name" [(ngModel)]="newProd.name">
+      </div>
+      <div class="form-group">
+         <label>Quantity:</label>
+         <p class="small text-danger">{{ err?.qty.message }}</p>
+         <input type="number" class="form-control" name="newProd.qty" [(ngModel)]="newProd.qty">
+      </div>
+      <div class="form-group">
+         <label>Price:</label>
+         <p class="small text-danger">{{ err?.price.message }}</p>
+         <input type="number" class="form-control" name="newProd.price" [(ngModel)]="newProd.price">
+      </div>
+      
+      <button type="submit" class="btn btn-success">Create</button>
+      <button class="btn btn-secondary" [routerLink]="['']">Cancel</button>
+   </form>
+</div>   
+
